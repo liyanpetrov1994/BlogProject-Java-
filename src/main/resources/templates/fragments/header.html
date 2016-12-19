@@ -2,7 +2,8 @@
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a th:href="@{/}" class="navbar-brand">SOFTUNI BLOG</a>
+                <img th:src="@{/images/Round-pen-tip-logo.png}" style="float:left;width:50px;"/>
+                <a th:href="@{/}" class="navbar-brand" style="margin-left:0px; font-style: italic">BLOGSPOT</a>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -22,7 +23,7 @@
                     </li>
                     <li sec:authorize="isAuthenticated()">
                         <a th:href="@{/article/create}">
-                            Create Article
+                            Create Story
                         </a>
                     </li>
                     <li sec:authorize="isAuthenticated()">
@@ -32,18 +33,18 @@
                     </li>
                     <li sec:authorize="isAuthenticated()">
                         <a th:href="@{/logout}">
-                            Logout
+                            Get Out
                         </a>
                     </li>
 
                     <li sec:authorize="isAnonymous()">
                         <a th:href="@{/register}">
-                            REGISTER
+                            Registration
                         </a>
                     </li>
                     <li sec:authorize="isAnonymous()">
                         <a th:href="@{/login}">
-                            LOGIN
+                            Get In
                         </a>
                     </li>
                 </ul>

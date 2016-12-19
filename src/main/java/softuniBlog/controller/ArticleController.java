@@ -131,10 +131,12 @@ public class ArticleController {
         Category category = this.categoryRepository.findOne(articleBindingModel.getCategoryId());
         HashSet<Tag> tags = this.findTagsFromString(articleBindingModel.getTagString());
 
-        article.setTags(tags);
+
         article.setCategory(category);
         article.setContent(articleBindingModel.getContent());
         article.setTitle(articleBindingModel.getTitle());
+        article.setTags(tags);
+
 
         this.articleRepository.saveAndFlush(article);
 

@@ -8,19 +8,19 @@ import java.util.Set;
  * Created by Flex on 8.12.2016 г..
  */
 @Entity
-@Table(name="class")
+@Table(name="tags")
 public class Tag {
     private Integer id;
     private String name;
     private Set<Article> articles;
 
-    public Tag() {
-    }
+    public Tag() { }
 
     public Tag(String name) {
         this.name = name;
         this.articles = new HashSet<>();
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getId(){
@@ -30,6 +30,7 @@ public class Tag {
     public void setId(Integer id) {
         this.id = id;
     }
+
     @Column(unique = true,nullable = false)
     public String getName() {
         return name;
@@ -38,6 +39,7 @@ public class Tag {
     public void setName(String name) {
         this.name = name;
     }
+
     @ManyToMany
     @JoinColumn(table = "tags_articles")
     public Set<Article> getArticles() {

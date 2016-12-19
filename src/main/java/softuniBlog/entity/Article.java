@@ -76,7 +76,8 @@ public class Article {
         this.category = category;
     }
 
-    @ManyToMany(mappedBy = "articles")
+    @ManyToMany()
+    @JoinColumn(table = "articles_tags")
     public Set<Tag> getTags() {
         return tags;
     }
