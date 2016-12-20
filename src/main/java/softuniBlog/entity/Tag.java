@@ -40,8 +40,7 @@ public class Tag {
         this.name = name;
     }
 
-    @ManyToMany
-    @JoinColumn(table = "tags_articles")
+    @ManyToMany(mappedBy = "tags")
     public Set<Article> getArticles() {
         return articles;
     }
@@ -49,4 +48,6 @@ public class Tag {
     public void setArticles(Set<Article> articles) {
         this.articles = articles;
     }
+
+
 }

@@ -76,15 +76,15 @@ public class Article {
         this.category = category;
     }
 
-    @ManyToMany()
-    @JoinColumn(table = "articles_tags")
-    public Set<Tag> getTags() {
-        return tags;
-    }
+        @ManyToMany()
+        @JoinColumn(table = "articles_tags")
+        public Set<Tag> getTags() {
+            return tags;
+        }
 
-    public void setTags(Set<Tag> tags) {
-        this.tags = tags;
-    }
+        public void setTags(Set<Tag> tags) {
+            this.tags = tags;
+        }
 
     @Transient
     public String getSummary(){
